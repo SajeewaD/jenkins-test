@@ -7,16 +7,25 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sleep 5
             }
         }
-        stage('Test') {
+        stage('Smoke Test') {
             steps {
                 echo 'Testing..'
+                sleep 7
             }
         }
-        stage('Deploy') {
+        stage('Full Test') {
+            steps {
+                echo 'Testing..'
+                sleep 10
+            }
+        }
+        stage('Package') {
             steps {
                 echo 'Deploying....'
+                sleep 5
             }
         }
     }
